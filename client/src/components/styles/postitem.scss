@@ -1,0 +1,28 @@
+@mixin centerItem {
+  line-height: 70px;
+  text-align: center;
+  background-color: rgb(243, 243, 243);
+  color: rgb(0, 0, 0);
+}
+
+.item {
+  height: 70px;
+  display: flex;
+  width: 100%;
+  .item-id {
+    width: 10%;
+    @include centerItem();
+  }
+  .item-writer {
+    width: 15%;
+    @include centerItem();
+  }
+  .item-title {
+    width: 50%;
+    @include centerItem();
+  }
+  .item-date {
+    width: 25%;
+    @include centerItem();
+  }
+}

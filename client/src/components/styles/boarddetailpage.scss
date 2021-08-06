@@ -1,0 +1,49 @@
+.board-detail-conatiner {
+  width: 860px;
+  height: 90%;
+  margin: 0 auto;
+  div {
+    margin-top: 1.5rem;
+  }
+  h1 {
+    background-color: rgb(111, 153, 101);
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 10px;
+  }
+}
+.detail-btns {
+  display: flex;
+  justify-content: flex-end;
+  button {
+    height: 30px;
+    width: 60px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(111, 153, 101);
+    color: white;
+    font-weight: bold;
+  }
+}
+.detail-subtitle {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.3rem;
+  .detail-subtitle-writer {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 243);
+  }
+  .detail-subtitle-date {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(243, 243, 243);
+  }
+}
+.detail-main {
+  height: 450px;
+  background-color: rgb(243, 243, 243);
+  border-radius: 5px;
+  overflow: hidden;
+}

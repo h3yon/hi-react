@@ -1,0 +1,58 @@
+.edit-container {
+  width: 860px;
+  margin: 0 auto;
+  background-color: rgb(243, 243, 243);
+  padding: 30px;
+  border-radius: 10px;
+  .edit-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(111, 153, 101);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+  }
+  form {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    font-weight: bold;
+    label {
+      margin-top: 1.5rem;
+      input {
+        border: none;
+        outline: none;
+        padding: 0;
+        border-radius: 5px;
+        height: 1.5rem;
+        padding-left: 10px;
+      }
+      textarea {
+        border: none;
+        outline: none;
+        border-radius: 10px;
+        height: 25rem;
+        margin-top: 1.5rem;
+        padding: 10px;
+      }
+    }
+    & :nth-child(3) {
+      display: flex;
+      flex-direction: column;
+    }
+    button {
+      margin-top: 1rem;
+      align-self: flex-end;
+      width: 100px;
+      height: 50px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      color: rgb(255, 255, 255);
+      background-color: rgb(111, 153, 101);
+    }
+  }
+}

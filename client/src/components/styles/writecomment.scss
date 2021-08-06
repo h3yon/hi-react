@@ -1,0 +1,15 @@
+.add-comment {
+  display: flex;
+  margin-top: 16px;
+  margin-bottom: 16px;
+
+  form {
+    flex: 1;
+  }
+
+  .user-image {
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+  }
+}
