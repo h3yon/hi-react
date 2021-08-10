@@ -9,7 +9,7 @@ app.use(express.json());
 app.get("/", (req, res) => res.send("Hi Express"));
 
 app.get("/api/posts", (req, res) => {
-  const sql = "SELECT * From post WHERE isdeleted = 0";
+  const sql = "SELECT * From post WHERE status = 1";
   connection.query(sql, (error, result, fields) => {
     if (error) throw error;
     res.send(result);
@@ -19,8 +19,8 @@ app.get("/api/posts", (req, res) => {
 
 app.post("/api/posts", (req, res) => {
   const sql = "INSERT INTO post VALUES (null, ?, ?, ?, 0, NOW())";
-  const { writer, title, maintext } = req.body;
-  const params = [title, writer, maintext];
+  const { writer, title, content } = req.body;
+  const params = [title, writer, content];
   connection.query(sql, params, (error, result, fields) => {
     if (error) throw error;
     res.send(result);
@@ -29,8 +29,7 @@ app.post("/api/posts", (req, res) => {
 });
 
 app.get("/api/posts/:id", (req, res) => {
-  const sql =
-    "SELECT title,writer,maintext,createdDate From post WHERE isdeleted = 0 AND id = ?";
+  const sql = "SELECT title,writer,content,createdAt From post WHERE status = 1 AND id = ?";
   const { id } = req.params;
   connection.query(sql, [id], (error, result, fields) => {
     if (error) throw error;
@@ -38,7 +37,7 @@ app.get("/api/posts/:id", (req, res) => {
   });
 });
 app.delete("/api/posts/:id", (req, res) => {
-  const sql = "UPDATE post SET isdeleted = 1 WHERE id = ?";
+  const sql = "UPDATE post SET status = 1 WHERE id = ?";
   const { id } = req.params;
   connection.query(sql, [id], (error, result, fields) => {
     if (error) throw error;
@@ -47,11 +46,10 @@ app.delete("/api/posts/:id", (req, res) => {
   });
 });
 app.post("/api/posts/:id/edit", (req, res) => {
-  const sql =
-    "UPDATE post SET title = ?, writer = ?, maintext = ? WHERE id = ?";
+  const sql = "UPDATE post SET title = ?, writer = ?, content = ? WHERE id = ?";
   const { id } = req.params;
-  const { writer, title, maintext } = req.body;
-  const params = [title, writer, maintext, id];
+  const { writer, title, content } = req.body;
+  const params = [title, writer, content, id];
   console.log(params);
   connection.query(sql, params, (error, result, fields) => {
     if (error) throw error;

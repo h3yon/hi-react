@@ -17,8 +17,8 @@ function BoardDetailPage({ match, history }) {
       setText({
         title: data[0].title,
         writer: data[0].writer,
-        date: data[0].createdDate,
-        maintext: data[0].maintext,
+        date: data[0].createdAt,
+        content: data[0].content,
       })
     );
   }, [match.params.id]);
@@ -27,10 +27,10 @@ function BoardDetailPage({ match, history }) {
     title: "",
     writer: "",
     date: "",
-    maintext: "",
+    content: "",
   });
 
-  const { title, writer, date, maintext } = text;
+  const { title, writer, date, content } = text;
 
   // 이 부분 추가
 
@@ -49,7 +49,7 @@ function BoardDetailPage({ match, history }) {
           <div className="detail-subtitle-date">Date: {date ? date : "Loading..."}</div>
         </div>
       </div>
-      <div className="detail-main">{maintext ? maintext : "Loading..."}</div>
+      <div className="detail-main">{content ? content : "Loading..."}</div>
 
       <div className="comments-header">
         <h4>Comments</h4>

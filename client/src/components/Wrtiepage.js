@@ -7,9 +7,9 @@ function Wrtiepage({ history }) {
   const [inputfield, setInputfield] = useState({
     writer: "",
     title: "",
-    mainText: "",
+    content: "",
   });
-  const { writer, title, mainText } = inputfield;
+  const { writer, title, content } = inputfield;
   const onChangeHandler = (e) => {
     console.log(inputfield);
     setInputfield({
@@ -19,7 +19,7 @@ function Wrtiepage({ history }) {
   };
   const onUpload = (e) => {
     e.preventDefault();
-    dispatch(createHandeler(writer, title, mainText)); // 업로드 요청 read 중복되는 것 같다.
+    dispatch(createHandeler(writer, title, content)); // 업로드 요청 read 중복되는 것 같다.
     history.push("/"); //메인페이지로 경로변경
   };
   return (
@@ -27,31 +27,14 @@ function Wrtiepage({ history }) {
       <div className="write-title">글쓰기</div>
       <form type="submit">
         <label>
-          작성자{" "}
-          <input
-            type="text"
-            name="writer"
-            value={writer}
-            onChange={onChangeHandler}
-          />
+          작성자 <input type="text" name="writer" value={writer} onChange={onChangeHandler} />
         </label>
         <label>
-          글제목{" "}
-          <input
-            type="text"
-            name="title"
-            value={title}
-            onChange={onChangeHandler}
-          />
+          글제목 <input type="text" name="title" value={title} onChange={onChangeHandler} />
         </label>
         <label>
           글 내용
-          <textarea
-            type="text"
-            name="mainText"
-            value={mainText}
-            onChange={onChangeHandler}
-          />
+          <textarea type="text" name="content" value={content} onChange={onChangeHandler} />
         </label>
         <button type="submit" onClick={onUpload}>
           업로드

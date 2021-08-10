@@ -15,12 +15,7 @@ function Home({ history }) {
   const { posts } = useSelector((state) => state.post);
   const postList = posts.map((item) => (
     <Link to={`/page/${item.id}`} key={item.id}>
-      <PostItem
-        id={item.id}
-        writer={item.writer}
-        title={item.title}
-        date={item.createdDate}
-      />
+      <PostItem id={item.id} writer={item.writer} title={item.title} date={item.createdAt} />
     </Link>
   ));
   return (

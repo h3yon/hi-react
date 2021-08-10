@@ -17,12 +17,12 @@ export const readHandler = () => async (dispatch) => {
   });
 };
 
-export const createHandeler = (writer, title, maintext) => (dispatch) => {
+export const createHandeler = (writer, title, content) => (dispatch) => {
   axios
     .post("/api/posts", {
       writer: writer,
       title: title,
-      maintext: maintext,
+      content: content,
     })
     .then((res) => dispatch(readHandler()))
     .catch((err) => console.log(err));
@@ -35,12 +35,12 @@ export const deleteHandler = (id, history) => (dispatch) => {
     .catch((err) => console.log(err));
 };
 
-export const editHandler = (id, writer, title, maintext, history) => (dispatch) => {
+export const editHandler = (id, writer, title, content, history) => (dispatch) => {
   axios
     .post(`/api/posts/${id}/edit`, {
       writer: writer,
       title: title,
-      maintext: maintext,
+      content: content,
     })
     .then((res) => history.goBack())
     .catch((err) => console.log(err));
