@@ -5,6 +5,8 @@ module.exports = {
   SUCCESS_ADD_POST: { "isSuccess": true, "code": 200, "message": "게시글 작성 성공" },
   SUCCESS_DELETE_POST: { "isSuccess": true, "code": 200, "message": "게시글 삭제 성공" },
   SUCCESS_PATCH_POST: { "isSuccess": true, "code": 200, "message": "게시글 수정 성공" },
+  SUCCESS_ADD_COMMENT: { "isSuccess": true, "code": 200, "message": "댓글 작성 성공" },
+  SUCCESS_GET_COMMENTS: { "isSuccess": true, "code": 200, "message": "댓글 조회 성공" },
 
   // Fail
   FAIL_GET_POSTS: { "isSuccess": false, "code": 100, "message": "게시글 목록 조회 실패" },
@@ -12,6 +14,8 @@ module.exports = {
   FAIL_ADD_POST: { "isSuccess": false, "code": 100, "message": "게시글 작성 실패" },
   FAIL_DELETE_POST: { "isSuccess": false, "code": 100, "message": "게시글 삭제 실패" },
   FAIL_PATCH_POST: { "isSuccess": false, "code": 100, "message": "게시글 수정 실패" },
+  FAIL_ADD_COMMENT: { "isSuccess": false, "code": 100, "message": "댓글 작성 실패" },
+  FAIL_GET_COMMENTS: { "isSuccess": false, "code": 100, "message": "댓글 조회 실패" },
 
   // Common
   TOKEN_EMPTY: { "isSuccess": false, "code": 300, "message": "JWT 토큰을 입력해주세요." },

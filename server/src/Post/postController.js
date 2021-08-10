@@ -37,3 +37,19 @@ exports.editPost = async function (req, res) {
   const editPostResult = await postService.editPost(title, writer, content, id);
   return res.send(editPostResult);
 };
+
+exports.addComment = async function (req, res) {
+  const { id } = req.params;
+  const { content } = req.body;
+  if (!content) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
+  if (!id || isNaN(id)) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
+  const addCommentResult = await postService.addComment(content, id);
+  return res.send(addCommentResult);
+};
+
+exports.getComments = async function (req, res) {
+  const { id } = req.params;
+  if (!id || isNaN(id)) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
+  const getCommentsResult = await postService.getComments(id);
+  return res.send(getCommentsResult);
+};

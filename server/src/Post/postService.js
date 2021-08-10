@@ -1,4 +1,4 @@
-const { pool } = require("../../config/database1");
+const { pool } = require("../../config/database");
 const postQuery = require("./postQuery");
 const baseResponse = require("../../config/baseResponseStatus");
 const { response, errResponse } = require("../../config/response");
@@ -66,10 +66,38 @@ async function editPost(title, writer, content, id) {
   }
 }
 
+async function addComment(content, postId) {
+  try {
+    const insertCommentParams = [content, postId];
+    const connection = await pool.getConnection(async (conn) => conn);
+    const [result] = await connection.query(postQuery.insertComment, insertCommentParams);
+    connection.release();
+    return result;
+  } catch (err) {
+    console.log(err);
+    return errResponse(baseResponse.FAIL_ADD_COMMENT);
+  }
+}
+
+async function getComments(postId) {
+  try {
+    const connection = await pool.getConnection(async (conn) => conn);
+    const [result] = await connection.query(postQuery.selectComments, postId);
+    connection.release();
+    return result;
+  } catch (err) {
+    console.log(err);
+    return errResponse(baseResponse.FAIL_GET_COMMENTS);
+  }
+}
+
 module.exports = {
   getPosts,
   addPost,
   getDetailPost,
   deletePost,
   editPost,
+
+  addComment,
+  getComments,
 };
