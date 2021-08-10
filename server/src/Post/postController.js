@@ -51,5 +51,6 @@ exports.getComments = async function (req, res) {
   const { id } = req.params;
   if (!id || isNaN(id)) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
   const getCommentsResult = await postService.getComments(id);
+  console.log("출력해줘", getCommentsResult);
   return res.send(getCommentsResult);
 };

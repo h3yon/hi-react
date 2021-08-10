@@ -7,4 +7,4 @@ exports.patchPost = `UPDATE post SET title = ?, writer = ?, content = ? WHERE id
 
 exports.insertComment = `INSERT comment(content, postId) VALUES(?, ?)`;
 exports.selectComments = `SELECT id, content, DATE_FORMAT(createdAt, '%Y-%m-%d %H:%i:%s') as createdAt, postId 
-                        FROM comment WHERE status = 1 AND postId = ?`;
+                        FROM comment WHERE postId = ?`;

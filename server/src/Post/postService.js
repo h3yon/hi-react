@@ -1,7 +1,7 @@
 const { pool } = require("../../config/database");
 const postQuery = require("./postQuery");
 const baseResponse = require("../../config/baseResponseStatus");
-const { response, errResponse } = require("../../config/response");
+const { errResponse } = require("../../config/response");
 
 async function getPosts() {
   try {

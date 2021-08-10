@@ -17,7 +17,7 @@ export const readHandler = () => async (dispatch) => {
   });
 };
 
-export const createHandeler = (writer, title, content) => (dispatch) => {
+export const createHandler = (writer, title, content) => (dispatch) => {
   axios
     .post("/api/posts", {
       writer: writer,

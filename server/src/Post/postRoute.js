@@ -1,8 +1,6 @@
 module.exports = function (app) {
   const post = require("./postController");
-  const dbconfig = require("./../../config/database");
   const mysql = require("mysql2");
-  const connection = mysql.createConnection(dbconfig);
 
   app.get("/", (req, res) => res.send("Hi Express"));
 
