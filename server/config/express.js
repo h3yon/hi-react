@@ -5,7 +5,7 @@ const cors = require("cors");
 const path = require("path");
 const dotenv = require("dotenv");
 dotenv.config({
-  path: path.resolve(process.cwd(), process.env.NODE_ENV == "production" ? ".env" : ".env.dev"),
+  path: path.resolve(process.cwd(), process.env.NODE_ENV == "production" ? ".env" : ".env.local"),
 });
 
 module.exports = function () {

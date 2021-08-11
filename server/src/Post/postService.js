@@ -7,7 +7,6 @@ async function getPosts() {
   try {
     const connection = await pool.getConnection(async (conn) => conn);
     const [getPostsResult] = await connection.query(postQuery.selectPosts);
-    console.log(getPostsResult);
     connection.release();
     return getPostsResult;
   } catch (err) {

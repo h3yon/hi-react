@@ -41,8 +41,7 @@ exports.editPost = async function (req, res) {
 exports.addComment = async function (req, res) {
   const { id } = req.params;
   const { content } = req.body;
-  if (!content) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
-  if (!id || isNaN(id)) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
+  if (!content || !id || isNaN(id)) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
   const addCommentResult = await postService.addComment(content, id);
   return res.send(addCommentResult);
 };
@@ -51,6 +50,5 @@ exports.getComments = async function (req, res) {
   const { id } = req.params;
   if (!id || isNaN(id)) return res.send(errResponse(baseResponse.CHECK_INPUT_PARAMETER));
   const getCommentsResult = await postService.getComments(id);
-  console.log("출력해줘", getCommentsResult);
   return res.send(getCommentsResult);
 };
