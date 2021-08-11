@@ -1,0 +1,10 @@
+# database
+server/config/database.js
+# dependencies
+server/node_modules
+client/node_modules
+node_modules
+
+# misc
+.DS_Store
+server/.env.local
