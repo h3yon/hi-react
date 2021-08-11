@@ -17,12 +17,12 @@ export const readHandler = (id) => async (dispatch) => {
   });
 };
 
-export const createHandler = (id, content) => (dispatch) => {
+export const createHandler = (id, content, history) => (dispatch) => {
   axios
     .post(`/api/posts/${id}/comments`, {
       content: content,
     })
-    .then((res) => dispatch(readHandler()))
+    .then((res) => dispatch(readHandler(id)))
     .catch((err) => console.log(err));
 };
 

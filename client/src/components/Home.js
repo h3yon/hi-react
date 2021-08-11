@@ -21,11 +21,10 @@ function Home({ history }) {
   return (
     <div className="board-container">
       <div className="board-container-title">자유게시판</div>
-
       <div className="board-container-board">
         <div className="board-header">
           <div className="board-header-num">번호</div>
-          <div className="board-header-writer">글쓴이</div>
+          <div className="board-header-writer">작성자</div>
           <div className="board-header-title">제목</div>
           <div className="board-header-date">날짜</div>
         </div>

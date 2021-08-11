@@ -1,10 +1,11 @@
 import React from "react";
+import "./styles/commentitem.scss";
 
 function CommentItem({ content, createdAt }) {
   return (
-    <div className="item">
-      <div className="item-id">{content}</div>
-      <div className="item-writer">{createdAt}</div>
+    <div className="comment-item">
+      <div className="comment-item-content">{content}</div>
+      <div className="comment-item-date">{createdAt}</div>
     </div>
   );
 }

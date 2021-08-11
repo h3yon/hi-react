@@ -1,0 +1,20 @@
+@mixin commentHeader {
+  line-height: 5rem;
+}
+
+.comment-item {
+  display: flex;
+  height: 2rem;
+  font-weight: bold;
+  .comment-item-content {
+    text-align: left;
+    padding-left: 20px;
+    @include commentHeader();
+    width: 70%;
+  }
+  .comment-item-date {
+    text-align: center;
+    @include commentHeader();
+    width: 30%;
+  }
+}
