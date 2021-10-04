@@ -1,5 +1,6 @@
 # database
 server/config/database.js
+
 # dependencies
 server/node_modules
 server/package-lock.json
@@ -7,10 +8,10 @@ client/node_modules
 client/package-lock.json
 node_modules
 
-
 # misc
 .DS_Store
 server/.env.local
+client/yarn.lock
 
 #log
 server/log/*
