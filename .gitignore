@@ -8,3 +8,6 @@ node_modules
 # misc
 .DS_Store
 server/.env.local
+
+#log
+server/log/*
